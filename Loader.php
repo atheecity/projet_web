@@ -31,7 +31,7 @@ class Loader
 				foreach ($files as $file)
 				{
 					$fileName = $file;
-					//Si le fichier possède l'éxtension .php alors charger le fichier
+					//Si le fichier possÃ¨de l'Ã©xtension .php alors charger le fichier
 					if(strrchr($file, '.') == '.php')
 					{
 						require($dir.'/'.$fileName);

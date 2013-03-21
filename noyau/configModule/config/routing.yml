@@ -1,8 +1,8 @@
 # Exemple pour un module
 # name_route:
 #   name_url: demo
-#   resource: ""  //adresse du fichier à charger OU
-#   controller: nom_controller:nom_fonction  //Fonction à charger dans le controller
+#   resource: ""  //adresse du fichier Ã  charger OU
+#   controller: nom_controller:nom_fonction  //Fonction Ã  charger dans le controller
 
 config_index:
     name_url: home

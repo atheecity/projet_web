@@ -6,7 +6,7 @@ require_once "config/autoload.php";
 //Chargement fichier yml routing.yml
 $Data = spyc_load_file('config/routing.yml');
  
-//preg_match récupère le premier paramètre après app.php
+//preg_match rÃ©cupÃ¨re le premier paramÃ¨tre aprÃ¨s app.php
 if(preg_match('#app.php/([a-z]+)/#', $_SERVER['PHP_SELF'], $match))
 {
 	//Boucle sur chaque valeur du fichier de routage
@@ -54,5 +54,3 @@ if(preg_match('#app.php/([a-z]+)/#', $_SERVER['PHP_SELF'], $match))
 		}
 	}
 }
-
-?>
