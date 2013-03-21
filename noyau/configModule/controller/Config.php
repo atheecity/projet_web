@@ -2,7 +2,7 @@
 
 function indexConfig()
 {
-    include('/../views/vues1.php');
+    include('noyau/configModule/views/vues1.php');
 }
 
 function bdConfig()
@@ -22,33 +22,25 @@ function bdConfig()
         try
         {
             $bd = new PDO('mysql:host='.$_POST['database_name'].';dbname='.$_POST['database_db'], $_POST['database_user'], $_POST['database_password']);
-            $array['database_name']  = $_POST['database_name'];
+            /*$array['database_name']  = $_POST['database_name'];
             $array['database_db']  = $_POST['database_db'];
             $array['database_user']  = $_POST['database_user'];
             $array['database_password']  = $_POST['database_password'];
             $yaml = Spyc::YAMLDump($array);
             $fp = fopen('config/parameters_database.yml', 'w');
             fwrite($fp, $yaml);
-            fclose($fp);
+            fclose($fp);*/
         }
         catch(PDOException $e)
         {
             $erreur = "Erreur les parametres de connexion ne sont pas valides";
             //Chargement de la vue
-            include('/../views/vues_bd.php');
+            include('noyau/configModule/views/vues_bd.php');
         }
     }
     else
     {
         //Chargement de la vue
-        include('/../views/vues_bd.php');
+        include('noyau/configModule/views/vues_bd.php');
     }
 }
-
-function fonc()
-{
-    echo "coucou";
-}
-
-
-?>
