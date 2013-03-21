@@ -1,0 +1,8 @@
+# Exemple pour un module
+# demoModule:
+# 	name_url: demo
+#	resource: ""  //adresse du fichier de routing du module
+
+configModule:
+	name_url: config
+	resource: "noyau/configModule"

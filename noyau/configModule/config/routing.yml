@@ -1,0 +1,13 @@
+# Exemple pour un module
+# name_route:
+#   name_url: demo
+#   resource: ""  //adresse du fichier à charger OU
+#   controller: nom_controller:nom_fonction  //Fonction à charger dans le controller
+
+config_index:
+    name_url: home
+    controller: Config.php:indexConfig
+    
+config_bd:
+    name_url: bd
+    controller: Config.php:bdConfig
