@@ -1,7 +1,6 @@
 <?php
 
-require_once "noyau/erreurModule/function/Erreur.php";
-require_once "noyau/loaderModule/function/Loader.php";
+include('Loader.php');
 $Loader = new Loader();
 
 //Fichier php
