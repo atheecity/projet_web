@@ -13,7 +13,11 @@ class Textarea
                                'name' => '',
                                'readonly' => '',
                                'rows' => '',
-                               'style' => '');
+                               'style' => '',
+                               'onfocus' => '',
+                               'onblur' => '',
+                               'onselect' => '',
+                               'onchange' => '');
     
     function __construct()
     {
@@ -33,6 +37,7 @@ class Textarea
             {
                 $this->textarea .= $cle.'="'.$valeur.'" ';
             }
+            $this->textarea .= 'required="requiered" ';
         } 
         catch(Erreur $e) 
         {
