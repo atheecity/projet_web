@@ -1,5 +1,9 @@
 <?php
 
+/*
+ *Ajout textarea
+ */
+
 class formulaire{
     
     private $champ = array('label' => '', 'type' => '', 'name' => '');
@@ -25,7 +29,7 @@ class formulaire{
             
             if(isset($tab['label']))
                 $this->addLabel($tab['label']);
-            $this->formualire .= '<input type="'.$tab['type'].'" name="'.$tab['name'].'" /><br/>';
+            $this->formualire .= '<input type="'.$tab['type'].'" name="'.$tab['name'].'" required="required" /><br/>';
         } 
         catch(Erreur $e) 
         {
@@ -43,6 +47,21 @@ class formulaire{
             $this->formualire .= '<option>'.$val;
         }
         $this->formualire .= '</select><br/>';
+    }
+    
+    function addTextarea($option)
+    {
+        $textarea = new Textarea();
+        try
+        {
+            if($textarea->addPropriete($option) == false)
+                throw new Erreur('Le paramètre n\'existe pas', 1);
+        }
+        catch(Erreur $e)
+        {
+            echo $e;
+        }
+        $this->formualire .= $textarea;
     }
     
     function addBouton($info)
