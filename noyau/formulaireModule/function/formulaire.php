@@ -42,16 +42,19 @@ class formulaire{
         $this->formualire .= $input;
     }
     
-    function addSelect($info, $option)
+    function addSelect($option)
     {
-        if(isset($info['label']))
-            $this->addLabel($info['label']);
-        $this->formualire .= '<select name="'.$info['name'].'" >';
-        foreach ($option as $val)
+        $select = new Select();
+        try
         {
-            $this->formualire .= '<option>'.$val;
+            if($select->addSelect($option) == false)
+                throw new Erreur('Le paramètre n\'existe pas', 1);
         }
-        $this->formualire .= '</select><br/>';
+        catch(Erreur $e)
+        {
+            echo $e;
+        }
+        $this->formualire .= $select;
     }
     
     function addTextarea($option)
