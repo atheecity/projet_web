@@ -13,7 +13,6 @@ function bdConfig()
     $form->add(array('type' => 'text', 'name' => 'database_user', 'label' => 'Utilisateur '));
     $form->add(array('type' => 'password', 'name' => 'database_password', 'label' => 'Mot de passe '));
     $form->add(array('type' => 'text', 'name' => 'database_db', 'label' => 'Base de donnees '));
-    $form->addBouton(array('type' => 'submit', 'name' => 'submit', 'value' => 'Valider'));
     $form->_destruct();
     
     //Si le formulaire est valider
