@@ -1,23 +1,25 @@
 <?php
 
+include('global.php');
+
 class Textarea
 {
     
     private $textarea = '';
-    //Propriete valide pour un textarea
-    private $propriete = array(
-                               'class' => '',
-                               'cols' => '',
-                               'disabled' => '',
-                               'id' => '',
-                               'name' => '',
-                               'readonly' => '',
-                               'rows' => '',
-                               'style' => '',
-                               'onfocus' => '',
-                               'onblur' => '',
-                               'onselect' => '',
-                               'onchange' => '');
+    
+    private $attributsTextarea = array(
+                                       'autofocus' => '',
+                                       'cols' => '',
+                                       'disabled' => '',
+                                       'form' => '',
+                                       'maxlength' => '',
+                                       'name' => '',
+                                       'placeholder' => '',
+                                       'readonly' => '',
+                                       'required' => '',
+                                       'rows' => '',
+                                       'wrap' => ''
+                                       );
     
     function __construct()
     {
@@ -26,10 +28,12 @@ class Textarea
     
     function addPropriete($prop)
     {
+        $globalHtml = new GlobalHtml();
+        $tab = array_merge($globalHtml->getAttributsGlobal(), $globalHtml->getFormEvents(), $this->attributsTextarea);
         try 
         {
-            //Test si la propriété est valide pour un textarea
-            if(count(array_diff_key($prop, $this->propriete)) > 0)
+            //Test si les attributs sont valides
+            if(count(array_diff_key($prop, $tab)) > 0)
                 throw new Erreur("La propriété n'existe pas", 1);
             
             //Parcour des différents propriété
