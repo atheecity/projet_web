@@ -69,9 +69,19 @@ class formulaire{
         $this->formualire .= $textarea;
     }
     
-    function addBouton($info)
+    function addButton($attributs, $text)
     {
-        $this->formualire .= '<input type="'.$info['type'].'" value="'.$info['value'].'" name="'.$info['name'].'" />';
+        $button = new Button();
+        try
+        {
+            if($button->addButton($option, $text) == false)
+                throw new Erreur('Un des attributs n\'existe pas', 1);
+        }
+        catch(Erreur $e)
+        {
+            echo $e;
+        }
+        $this->formualire .= $button;
     }
 
     function toString()
