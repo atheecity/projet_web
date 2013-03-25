@@ -21,20 +21,25 @@ class formulaire{
 
     function add($tab)
     {
-
-        try 
+        //Si attribut label existe l'ajouter puis le supprimer du tableau
+        if(array_key_exists('label', $tab))
         {
-            if(count(array_diff_key($tab, $this->champ)) > 0)
-                throw new Erreur("Le parametre n'existe pas", 1);
-            
-            if(isset($tab['label']))
-                $this->addLabel($tab['label']);
-            $this->formualire .= '<input type="'.$tab['type'].'" name="'.$tab['name'].'" required="required" /><br/>';
-        } 
-        catch(Erreur $e) 
+            $this->addLabel($tab['label']);
+            unset($tab['label']);
+        }
+        
+        $input = new Input();
+        
+        try
+        {
+            if($input->addInput($tab) == false)
+                throw new Erreur('Un des attributs n\'existe pas', 1);
+        }
+        catch(Erreur $e)
         {
             echo $e;
         }
+        $this->formualire .= $input;
     }
     
     function addSelect($info, $option)
