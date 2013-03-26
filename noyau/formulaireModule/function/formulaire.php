@@ -23,7 +23,7 @@ class formulaire{
     {
         //Si attribut label existe l'ajouter puis le supprimer du tableau
         if(array_key_exists('label', $tab))
-        {
+        {   
             $this->addLabel($tab['label']);
             unset($tab['label']);
         }
@@ -92,7 +92,7 @@ class formulaire{
         return $this->formualire;
     }
     
-    function _destruct()
+    function __destruct()
     {
         $this->formualire .= '</form>';
     }

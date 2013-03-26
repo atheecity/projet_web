@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' href='../../../web/css/main.css' type='text/css' />
+        <title>Configuration</title>
+        <link rel='stylesheet' href='<? asset('css/main.css'); ?>' type='text/css' />
     </head>
     <body>
         <div class="center">
-            <img src="../../../web/images/webPlane.png" />
+            <img src="<? asset('images/webPlane.png') ?>" alt="" />
             <div class="center_text">
                 <p id="vues_bd">Configuration base de donnees</p>
                 <p class="erreur"><?php if(isset($erreur))echo $erreur; ?></p>

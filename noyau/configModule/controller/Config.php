@@ -2,7 +2,7 @@
 
 function indexConfig()
 {
-    include('noyau/configModule/views/vues1.php');
+    require_once(realpath('../noyau/configModule/views/vues1.php'));
 }
 
 function bdConfig()
@@ -13,7 +13,7 @@ function bdConfig()
     $form->add(array('type' => 'text', 'name' => 'database_user', 'label' => 'Utilisateur '));
     $form->add(array('type' => 'password', 'name' => 'database_password', 'label' => 'Mot de passe '));
     $form->add(array('type' => 'text', 'name' => 'database_db', 'label' => 'Base de donnees '));
-    $form->_destruct();
+    $form->__destruct();
     
     //Si le formulaire est valider
     if(isset($_POST['database_name']))

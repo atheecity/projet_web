@@ -59,7 +59,7 @@ class Input
             {
                 $this->input .= $cle.'="'.$valeur.'" ';
             }
-            $this->input .= 'required="requiered" ';
+            $this->input .= 'required="required" ';
         } 
         catch(Erreur $e) 
         {
@@ -77,7 +77,7 @@ class Input
     
     public function __destruct()
     {
-        $this->input .= '>';
+        $this->input .= ' >';
     }
     
 }

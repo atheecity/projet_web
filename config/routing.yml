@@ -4,5 +4,5 @@
 #	resource: ""  //adresse du fichier de routing du module
 
 configModule:
-	name_url: config
+	name_url: configuration
 	resource: "noyau/configModule"
