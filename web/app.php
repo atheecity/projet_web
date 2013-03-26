@@ -1,7 +1,5 @@
 <?
 
-define("CHEMIN", $_SERVER[SCRIPT_NAME]);
-
 //Fichier qui permet de charger tout les fichiers
 require_once 'Loader.php';
 require_once '../config/autoload.php';
