@@ -13,7 +13,7 @@ class Loader
 			{
 				//Test si le module est bien un repertoire
 				if(!is_dir($dir))
-					throw new Erreur("Le module n'existe pas", 1);
+					//throw new Erreur("Le module n'existe pas", 1);
 				
 				//Array des fichiers dans le dossier function
 				$files = scandir($dir);
