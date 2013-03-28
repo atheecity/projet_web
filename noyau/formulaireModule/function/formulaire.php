@@ -41,6 +41,11 @@ class formulaire{
         $this->formualire .= $input;
     }
     
+    function addBr()
+    {
+        $this->formualire .= '</br>';
+    }
+    
     /**
     * @name addSelect($attributs, $options)
     * @param array $attributs Ajoute des attributs au select
