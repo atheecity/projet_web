@@ -1,9 +1,5 @@
 <?php
 
-/*
- *Ajout textarea
- */
-
 class formulaire{
     
     private $formualire;
@@ -12,18 +8,25 @@ class formulaire{
     {
         $this->formualire .= '<form method="'.$method.'">';
     }
-    
-    function addLabel($label)
-    {
-        $this->formualire .= '<label>'.$label.'</label>';
-    }
 
     function add($tab)
     {
         //Si attribut label existe l'ajouter puis le supprimer du tableau
         if(array_key_exists('label', $tab))
-        {   
-            $this->addLabel($tab['label']);
+        {
+            $attributsLabel;
+            if(array_key_exists('id', $tab))
+            {
+                $attributsLabel['for'] = $tab['id'];
+            }
+            else
+            {
+                $attributsLabel['for'] = 'form_input_'.$tab['name'];
+                $tab['id'] = 'form_input_'.$tab['name'];
+            }
+            $label = new Label();
+            $label->addLabel($attributsLabel, $tab['label']);
+            $this->formualire .= $label;
             unset($tab['label']);
         }
         
