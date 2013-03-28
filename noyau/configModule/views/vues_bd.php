@@ -9,7 +9,7 @@
             <img src="<? asset('images/webPlane.png') ?>" alt="" />
             <div class="center_text">
                 <p id="vues_bd">Configuration base de donnees</p>
-                <p class="erreur"><?php if(isset($erreur))echo $erreur; ?></p>
+                <p class="erreur"></p>
                 <div class="form">
                     <?php echo $form->toString(); ?>
                 </div>

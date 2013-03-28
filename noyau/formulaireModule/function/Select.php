@@ -13,7 +13,6 @@ class Select
                                      'name' => '',
                                      'required' => '',
                                      'size' => '',
-                                     'option' => '' //Attribut pour les options
                                      );
     
     public function __construct()
@@ -21,7 +20,7 @@ class Select
         $this->select .= '<select ';
     }
     
-    public function addSelect($attributs)
+    public function addSelect($attributs, $options)
     {
         //Récupération attributs
         $globalHtml = new GlobalHtml();
@@ -35,26 +34,29 @@ class Select
             if(count(array_diff_key($attributs, $tab)) > 0)
                 throw new Erreur("La propriété n'existe pas", 1);
             
-            //Test si l'attribut option existe
-            if(array_key_exists('option', $attributs))
+            //Test si required est a false
+            if(array_key_exists('required', $attributs))
             {
-                $option = $attributs['option'];
-                unset($attributs['option']);
+                if($attributs['required'] != false)
+                    $this->select .= 'required';
+                unset($attributs['required']);
             }
+            else
+                $this->select .= 'required ';
             
             //Parcour des différents propriété
             foreach($attributs as $cle=>$valeur)
             {
                 $this->select .= $cle.'="'.$valeur.'" ';
             }
-            $this->select .= 'required="requiered"> ';
+            $this->select .= '/>';
         } 
         catch(Erreur $e) 
         {
             return false;
         }
         
-        foreach($option as $cle=>$valeur)
+        foreach($options as $cle=>$valeur)
         {
             $this->select .= '<option value="'.$cle.'">'.$valeur.'</option>';
         }

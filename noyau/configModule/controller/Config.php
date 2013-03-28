@@ -1,18 +1,20 @@
 <?php
 
-function indexConfig()
+function indexconfig()
 {
-    require_once(realpath('../noyau/configModule/views/vues1.php'));
+    require_once('../noyau/configModule/views/vues1.php');
 }
 
 function bdConfig()
 {
     //Création du formulaire 
-    $form = new Formulaire('POST');
-    $form->add(array('type' => 'text', 'name' => 'database_name', 'label' => 'Host '));
+    $form = new formulaire('POST');
+    $form->add(array('type' => 'text', 'name' => 'database_name', 'label' => 'Host ', 'required' => false));
     $form->add(array('type' => 'text', 'name' => 'database_user', 'label' => 'Utilisateur '));
     $form->add(array('type' => 'password', 'name' => 'database_password', 'label' => 'Mot de passe '));
     $form->add(array('type' => 'text', 'name' => 'database_db', 'label' => 'Base de donnees '));
+    $form->addSelect(array('required' => false), array('FRANCE' => 'FRANCE', 'ALLEMAGNE' => 'ALLEMAGNE'));
+    $form->addButton(array('value' => 'Soumettre'), "Soumettre");
     $form->__destruct();
     
     //Si le formulaire est valider
@@ -28,18 +30,18 @@ function bdConfig()
             $yaml = Spyc::YAMLDump($array);
             $fp = fopen('config/parameters_database.yml', 'w');
             fwrite($fp, $yaml);
-            fclose($fp);*/
+            fclose($fp);*/ 
         }
         catch(PDOException $e)
         {
             $erreur = "Erreur les parametres de connexion ne sont pas valides";
             //Chargement de la vue
-            include('noyau/configModule/views/vues_bd.php');
+            include('../noyau/configModule/views/vues_bd.php');
         }
     }
     else
     {
         //Chargement de la vue
-        include('noyau/configModule/views/vues_bd.php');
+        include('../noyau/configModule/views/vues_bd.php');
     }
 }

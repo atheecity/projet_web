@@ -6,8 +6,7 @@
 
 class formulaire{
     
-    private $champ = array('label' => '', 'type' => '', 'name' => '');
-    private $formualire = "";
+    private $formualire;
     
     function __construct($method, $action="")
     {
@@ -42,12 +41,18 @@ class formulaire{
         $this->formualire .= $input;
     }
     
-    function addSelect($option)
+    /**
+    * @name addSelect($attributs, $options)
+    * @param array $attributs Ajoute des attributs au select
+    * @param array $options Ajoute des options dans le select 
+    * @return void 
+    */  
+    function addSelect($attributs, $options)
     {
         $select = new Select();
         try
         {
-            if($select->addSelect($option) == false)
+            if($select->addSelect($attributs, $options) == false)
                 throw new Erreur('Le paramètre n\'existe pas', 1);
         }
         catch(Erreur $e)
@@ -77,7 +82,7 @@ class formulaire{
         $button = new Button();
         try
         {
-            if($button->addButton($option, $text) == false)
+            if($button->addButton($attributs, $text) == false)
                 throw new Erreur('Un des attributs n\'existe pas', 1);
         }
         catch(Erreur $e)
