@@ -54,12 +54,23 @@ class Input
             if(count(array_diff_key($attributs, $tab)) > 0)
                 throw new Erreur("La propriété n'existe pas", 1);
             
+            //Test si required est a false
+            if(array_key_exists('required', $attributs))
+            {
+                if($attributs['required'] != false)
+                    $this->input .= 'required ';
+                unset($attributs['required']);
+            }
+            else
+            {
+                $this->input .= 'required ';
+            }
+            
             //Parcour des différents propriété
             foreach($attributs as $cle=>$valeur)
             {
                 $this->input .= $cle.'="'.$valeur.'" ';
             }
-            $this->input .= 'required="required" ';
         } 
         catch(Erreur $e) 
         {
