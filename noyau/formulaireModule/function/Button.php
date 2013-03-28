@@ -24,7 +24,13 @@ class Button
         $this->button .= '<button ';
     }
     
-    public function addButton($attributs, $text=null)
+    /**
+    * @name addButton($attributs, $options)
+    * @param array $attributs Ajoute des attributs au button
+    * @param string $text Libelle du bouton 
+    * @return bool = TRUE/FALSE
+    */  
+    public function addButton($attributs=null, $text=null)
     {
         //Récupération attributs
         $globalHtml = new GlobalHtml();
@@ -37,7 +43,7 @@ class Button
             if(count(array_diff_key($attributs, $tab)) > 0)
                 throw new Erreur("La propriété n'existe pas", 1);
             
-            //Parcour des différents propriété
+            //Parcour des différents attributs
             foreach($attributs as $cle=>$valeur)
             {
                 $this->button .= $cle.'="'.$valeur.'" ';
