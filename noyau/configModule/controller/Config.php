@@ -9,11 +9,14 @@ function bdConfig()
 {
     //Création du formulaire 
     $form = new formulaire('POST');
-    $form->add(array('type' => 'text', 'name' => 'database_name', 'label' => 'Host ', 'required' => false));
+    $form->add(array('type' => 'text', 'name' => 'database_name', 'label' => 'Host '));
+    $form->addBr();
     $form->add(array('type' => 'text', 'name' => 'database_user', 'label' => 'Utilisateur '));
+    $form->addBr();
     $form->add(array('type' => 'password', 'name' => 'database_password', 'label' => 'Mot de passe '));
+    $form->addBr();
     $form->add(array('type' => 'text', 'name' => 'database_db', 'label' => 'Base de donnees '));
-    $form->addSelect(array('required' => false), array('FRANCE' => 'FRANCE', 'ALLEMAGNE' => 'ALLEMAGNE'));
+    $form->addBr();
     $form->addButton(array('value' => 'Soumettre'), "Soumettre");
     $form->__destruct();
     
