@@ -46,7 +46,7 @@ class formulaire{
     
     function addBr()
     {
-        $this->formualire .= '</br>';
+        $this->formualire .= '<br>';
     }
     
     /**
