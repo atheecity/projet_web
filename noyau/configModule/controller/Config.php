@@ -9,7 +9,7 @@ function bdConfig()
 {
     //Création du formulaire 
     $form = new formulaire('POST');
-    $form->add(array('type' => 'text', 'name' => 'database_name', 'label' => 'Host '));
+    $form->add(array('type' => 'text',  'label' => 'Host '));
     $form->addBr();
     $form->add(array('type' => 'text', 'name' => 'database_user', 'label' => 'Utilisateur '));
     $form->addBr();
