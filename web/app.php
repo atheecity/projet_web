@@ -5,6 +5,7 @@ require_once '../config/url_helper.php';
 require_once 'Loader.php';
 require_once '../config/autoload.php';
 require_once 'spy.php';
+require_once 'Ini.php';
 
 //echo $_SERVER[SCRIPT_NAME];
 

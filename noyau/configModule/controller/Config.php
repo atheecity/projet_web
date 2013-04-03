@@ -26,10 +26,8 @@ function bdConfig()
             $array['database_db']  = $_POST['database_db'];
             $array['database_user']  = $_POST['database_user'];
             $array['database_password']  = $_POST['database_password'];
-            $yaml = Spyc::YAMLDump($array);
-            $fp = fopen('../config/parameters_database.yml', 'w');
-            fwrite($fp, $yaml);
-            fclose($fp);
+            $ini = new Ini('../config/parameters.ini');
+            $ini->add_array($array, '[DATABASE]');
         }
         catch(Exception $e)
         {
