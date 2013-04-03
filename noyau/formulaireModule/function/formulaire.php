@@ -11,6 +11,7 @@ class formulaire{
 
     function add($tab)
     {
+        $this->formualire .= '<div>';
         //Si attribut label existe l'ajouter puis le supprimer du tableau
         if(array_key_exists('label', $tab))
         {
@@ -41,12 +42,7 @@ class formulaire{
         {
             echo $e;
         }
-        $this->formualire .= $input;
-    }
-    
-    function addBr()
-    {
-        $this->formualire .= '<br>';
+        $this->formualire .= $input.'</div>';
     }
     
     /**
