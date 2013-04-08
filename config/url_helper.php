@@ -1,8 +1,8 @@
 <?
 
-define('BASE', '/projet_web/');
-
 function asset($chemin)
 {
-    echo BASE.$chemin;
+    $ini = new Ini('../config/parameters.ini');
+    $array = $ini->return_array('URL');
+    echo $array['BASE'].$chemin;
 }
