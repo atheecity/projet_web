@@ -5,6 +5,31 @@ function indexconfig()
     require_once('../noyau/configModule/views/vues1.php');
 }
 
+function urlBaseConfig()
+{
+    //Création formulaire
+    $form = new formulaire('POST');
+    $form->add(array('type' => 'text', 'name' => 'url_base', 'placeholder' => 'Url base'));
+    $form->addButton(array('value' => 'Suivant'), "Suivant");
+    $form->__destruct();
+    
+    $doss = explode('/', $_SERVER['SCRIPT_NAME']);
+    $test = true;
+    $chemin = "/";
+    foreach($doss as $val)
+    {
+        if($test == true && $val != 'web')
+        {
+            if($val != '')
+                $chemin .= $val."/";
+        }
+        else
+            $test = false;
+    }
+    
+    include('../noyau/configModule/views/vues_url.php');
+}
+
 function bdConfig()
 {
     //Création du formulaire 

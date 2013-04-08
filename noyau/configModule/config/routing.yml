@@ -8,6 +8,10 @@ config_index:
     name_url: home
     controller: Config.php:indexConfig
     
+config_urlBase:
+    name_url: url
+    controller: Config.php:urlBaseConfig
+    
 config_bd:
     name_url: bd
     controller: Config.php:bdConfig
