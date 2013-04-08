@@ -36,10 +36,10 @@ class Ini
     }
     
     /**
-     * @name select_value($name_section = null) Retourne un array de la section passé en paramètre
+     * @name return_array($name_section = null) Retourne un array de la section passé en paramètre
      * @param string $name_section Nom de la valeur à retourner
      */
-    public function return_file($name_section = null)
+    public function return_array($name_section = null)
     {
         $ini_array = parse_ini_file($this->filename, true);
         
