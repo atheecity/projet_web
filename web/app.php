@@ -7,8 +7,6 @@ require_once '../config/autoload.php';
 require_once 'spy.php';
 require_once 'Ini.php';
 
-//echo $_SERVER[SCRIPT_NAME];
-
 //Chargement fichier yml routing.yml
 $Data = spyc_load_file('../config/routing.yml');
 
@@ -43,19 +41,27 @@ if(preg_match('#app.php/([a-z]+)/#', $_SERVER['PHP_SELF'], $match))
 						}
 						else
 						{
-							echo "ERREUR 1";
+							include('pages/404.html');
+                            exit();
 						}
 					}
 				}
 				else
 				{
-					echo "ERREUR : Pas de fichier de routage dans le module : ".$val['name_url'];
+					include('pages/404.html');
+                    exit();
 				}
 			}
 		}
 		else
 		{
-			echo "ERREUR";
+			include('pages/404.html');
+            exit();
 		}
 	}
+}
+else
+{
+    include('pages/404.html');
+    exit();
 }

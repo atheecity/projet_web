@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html>     
 <html>
     <head>
         <title>Configuration</title>
-        <link rel='stylesheet' href='<? asset('css/main.css'); ?>' type='text/css' />
+        <link rel='stylesheet' href='<? asset('css/configModule.css'); ?>' type='text/css' />
     </head>
     <body>
         <div class="center">

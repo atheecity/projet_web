@@ -30,20 +30,21 @@ function urlBaseConfig()
     //Si le formulaire est validé
     if(isset($_POST['url_base']))
     {
-        try
+        $array['BASE'] = $_POST['url_base'];
+        if(file_exists($_SERVER["DOCUMENT_ROOT"].$array['BASE'].'web/app.php'))
         {
-            $array['BASE'] = $_POST['url_base'];
             $ini = new Ini('../config/parameters.ini');
             $ini->add_array($array, '[URL]');
+            header('Location: ../../configuration/bd/');
         }
-        catch(Exception $e)
+        else
         {
-            $erreur = 'Erreur';
+            $erreur = 'Erreur, le dossier web n\'est pas accessible.';
             include('../noyau/configModule/views/vues_url.php');
         }
     }
-
-    include('../noyau/configModule/views/vues_url.php');
+    else
+        include('../noyau/configModule/views/vues_url.php');
 }
 
 function bdConfig()

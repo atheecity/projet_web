@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' href='<? asset('css/main.css'); ?>' type='text/css' />
+        <link rel="stylesheet" href="../../web/css/configModule.css" type="text/css" />
     </head>
     <body>
         <div class="center">
-            <img src="<? asset('images/webPlane.png'); ?>" />
-            <div class="center_text">
-                <p>Bienvenue dans WebPlane !</p>
-                <a href="" >Continuer l'installation</a>
+            <img src="../../web/images/webPlane.png" />
+            <div class="content">
+                <p class="intro">Bienvenue dans WebPlane !</p>
+                <a class="bt" href="../../configuration/url/" >Commencer l'installation</a>
             </div>
         </div>
     </body>
