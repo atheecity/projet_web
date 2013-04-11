@@ -10,11 +10,7 @@ class Loader
 		{
 			$dir = "../".$module."/function";
 			try
-			{
-				//Test si le module est bien un repertoire
-				if(!is_dir($dir))
-					echo "Erreur";
-				
+			{	
 				//Array des fichiers dans le dossier function
 				$files = scandir($dir);
 				
