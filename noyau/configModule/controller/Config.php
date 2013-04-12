@@ -34,7 +34,7 @@ function urlBaseConfig()
         if(file_exists($_SERVER["DOCUMENT_ROOT"].$array['BASE'].'web/app.php'))
         {
             $ini = new Ini('../config/parameters.ini');
-            $ini->add_array($array, '[URL]');
+            $ini->add_array($array, 'URL');
             header('Location: ../../configuration/bd/');
         }
         else
@@ -69,7 +69,7 @@ function bdConfig()
             $array['database_user']  = $_POST['database_user'];
             $array['database_password']  = $_POST['database_password'];
             $ini = new Ini('../config/parameters.ini');
-            $ini->add_array($array, '[DATABASE]');
+            $ini->add_array($array, 'DATABASE');
         }
         catch(Exception $e)
         {
