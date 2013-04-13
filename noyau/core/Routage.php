@@ -13,7 +13,6 @@ class Routage
         $this->url = $_SERVER['PATH_INFO'];
         $this->urlParse = $this->parse($this->url);
         $this->loadModule();
-        $this->loadController();
     }
     
     /*
@@ -100,5 +99,10 @@ class Routage
             'fonction' => $param[1]
         );
         return $valCont;
+    }
+    
+    public function getNameModule()
+    {
+        return $this->nameModule;
     }
 }

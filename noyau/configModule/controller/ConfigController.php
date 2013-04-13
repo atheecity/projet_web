@@ -3,10 +3,9 @@
 class ConfigController extends Controller
 {
     
-    function indexconfig($test)
+    function indexconfig()
     {
-        echo $test;
-        require_once('../noyau/configModule/views/vues1.php');
+        $this->renderView('vues1.php');
     }
     
     function urlBaseConfig()

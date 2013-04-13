@@ -1,3 +1,0 @@
-contactModule_index:
-	name: home
-	resource: "contactModule/controleurs/index.php"

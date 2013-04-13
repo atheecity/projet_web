@@ -8,14 +8,13 @@ define('CORE', ROOT.DS.'noyau'.DS.'core'); //Chemin pour accéder au dossier cor
 
 require CORE.DS.'includes.php';
 
-new Routage();
+$test = new Routage();
+$test->loadController();
 
-//require 'spy.php';
 //require_once 'Loader.php';
 //require_once '../config/autoload.php';
 //require_once 'Ini.php';
 //require_once '../config/url_helper.php';
 
-//defineRoute($_SERVER['PHP_SELF']);
 
 
