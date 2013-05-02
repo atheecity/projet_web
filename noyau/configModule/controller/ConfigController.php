@@ -7,48 +7,6 @@ class ConfigController extends Controller
     {
         $this->renderView('vues1.php');
     }
-    
-    function urlBaseConfig()
-    {
-        //Création formulaire
-        $form = new formulaire('POST');
-        $form->add(array('type' => 'text', 'name' => 'url_base', 'placeholder' => 'Url base'));
-        $form->addButton(array('value' => 'Suivant'), "Suivant");
-        $form->__destruct();
-        
-        $doss = explode('/', $_SERVER['SCRIPT_NAME']);
-        $test = true;
-        $chemin = "/";
-        foreach($doss as $val)
-        {
-            if($test == true && $val != 'web')
-            {
-                if($val != '')
-                    $chemin .= $val."/";
-            }
-            else
-                $test = false;
-        }
-        
-        //Si le formulaire est validé
-        if(isset($_POST['url_base']))
-        {
-            $array['BASE'] = $_POST['url_base'];
-            if(file_exists($_SERVER["DOCUMENT_ROOT"].$array['BASE'].'web/app.php'))
-            {
-                $ini = new Ini('../config/parameters.ini');
-                $ini->add_array($array, 'URL');
-                header('Location: ../../configuration/bd/');
-            }
-            else
-            {
-                $erreur = 'Erreur, le dossier web n\'est pas accessible.';
-                include('../noyau/configModule/views/vues_url.php');
-            }
-        }
-        else
-            include('../noyau/configModule/views/vues_url.php');
-    }
 
     function bdConfig()
     {
@@ -85,8 +43,6 @@ class ConfigController extends Controller
         {
             //Chargement de la vue
             include('../noyau/configModule/views/vues_bd.php');
-        }
-        
-    }
-    
+        }   
+    }    
 }

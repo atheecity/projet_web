@@ -12,8 +12,10 @@ class Controller
             $this->variables += $variables;
         }
         extract($this->variables);
-        $route = new Routage();
-        $view = ROOT.DS.$route->getNameModule().DS.'views'.DS.$view;
+        $request = new Request();
+        Routage::parse($request->getUrl(), $request);
+        Routage::parse($request->getRecModule(), $request);
+        $view = ROOT.DS.$request->getNameModule().DS.'views'.DS.$view;
         require($view);
     }
     

@@ -8,10 +8,6 @@ config_index:
     name_url: home
     controller: ConfigController:indexConfig
     
-config_urlBase:
-    name_url: url
-    controller: ConfigController:urlBaseConfig
-    
 config_bd:
     name_url: bd
     controller: ConfigController:bdConfig
