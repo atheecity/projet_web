@@ -3,6 +3,7 @@
 # 	name_url: demo
 #	resource: ""  //adresse du fichier de routing du module
 
+
 configModule:
-	name_url: configuration
+	name_url: configuration_webPlane1.0
 	resource: "noyau/configModule"

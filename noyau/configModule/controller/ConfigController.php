@@ -5,7 +5,7 @@ class ConfigController extends Controller
     
     function indexconfig()
     {
-        $this->renderView('vues1.php');
+        $this->renderView('noyau/configModule/views/vues1.php');
     }
 
     function bdConfig()
@@ -31,18 +31,53 @@ class ConfigController extends Controller
                 $array['database_password']  = $_POST['database_password'];
                 $ini = new Ini('../config/parameters.ini');
                 $ini->add_array($array, 'DATABASE');
+
+                $this->header('configModule:ConfigController:siteConfig');
             }
             catch(Exception $e)
             {
                 $erreur = "Erreur les parametres de connexion ne sont pas valides";
                 //Chargement de la vue
-                include('../noyau/configModule/views/vues_bd.php');
+                $this->renderView('noyau/configModule/views/vues_bd.php', array(
+                    'form' => $form->toString(), 
+                    'erreur' => $erreur));
             }
         }
         else
         {
             //Chargement de la vue
-            include('../noyau/configModule/views/vues_bd.php');
-        }   
-    }    
+            $this->renderView('noyau/configModule/views/vues_bd.php', array(
+                'form' => $form->toString()));
+        }
+    }
+
+    function siteConfig()
+    {
+        //Formulaire 
+        $form = new formulaire('POST');
+        $form->add(array('type' => 'text', 'name' => 'name_site', 'placeholder' => 'Nom site web'));
+        $form->add(array('type' => 'email', 'name' => 'mail_site', 'placeholder' => 'Mail site web'));
+        $form->addButton(array('value' => 'Soumettre'), "Soumettre");
+        $form->__destruct();
+
+        if(isset($_POST['name_site']))
+        {
+            $array['name_site'] = $_POST['name_site'];
+            $array['mail_site'] = $_POST['mail_site'];
+            $ini = new Ini('../config/parameters.ini');
+            $ini->add_array($array, 'SITE');
+
+            $this->header('configModule:ConfigController:finConfig');
+        }
+        else
+        {
+            $this->renderView('noyau/configModule/views/vues_site.html.twig', array(
+                'form' =>$form->toString()));
+        }
+    }
+
+    function finConfig()
+    {
+        $this->renderView('noyau/configModule/views/vues_fin.html.twig');
+    }   
 }

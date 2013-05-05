@@ -1,7 +1,5 @@
 <?php
 
-include('global.php');
-
 class Textarea
 {
     

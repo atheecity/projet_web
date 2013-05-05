@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ twii.asset('css/configModule.css') }}" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <div class="center">
+            <img src="{{ twii.asset('images/webPlane.png') }}" />
+            <div class="content">
+                <p class="intro">
+                    {% block intro %}
+                    {% endblock %}
+                </p>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

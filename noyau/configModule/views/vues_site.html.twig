@@ -1,0 +1,12 @@
+{% extends "noyau/configModule/views/default.html.twig" %}
+
+{% block intro %}
+    Configuration site web
+{% endblock %}
+
+{% block content %}
+    <p class="erreur">{{ erreur }}</p>
+    <div class="form">
+        {{ form|raw }}
+    </div>
+{% endblock %}

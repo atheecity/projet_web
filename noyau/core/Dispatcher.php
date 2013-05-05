@@ -33,13 +33,25 @@ class Dispatcher
     public function loadController()
     {
         $controller = $this->loadModule();
-        if($controller != null)
+        if($controller != false)
         {
             $valCont = $this->parseController($controller['controller']);
             require ROOT.DS.$this->request->getNameModule().DS.'controller'.DS.$valCont['fichier'].'.php';
             $cont = new $valCont['fichier']();
             call_user_func_array(array($cont, $valCont['fonction']), $this->request->getParametres());
         }
+        else
+        {
+            $this->error('Le controller '.$this->request->getController().
+                ' n\'existe pas !');
+        }
+    }
+
+    public function error($err)
+    {
+        header("HTTP/1.0 404 Not Found");
+        echo $err;
+        exit;
     }
     
     /**
@@ -48,7 +60,11 @@ class Dispatcher
     function loadModule()
     {
         
-        $this->request->getRecModule();
+        if($this->request->getRecModule() == false)
+        {
+            $this->error('Le module '.$this->request->getModule().
+                ' n\'existe pas !');
+        }
         
         if($this->request->getNameModule() != null)
         {
@@ -58,7 +74,7 @@ class Dispatcher
             $controller = $this->findRoute($this->request->getController(), $Data);
             return $controller;
         }
-        return null;
+        return false;
     }
     
     /**

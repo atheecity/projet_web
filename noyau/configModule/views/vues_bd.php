@@ -1,19 +1,12 @@
-<!DOCTYPE html>     
-<html>
-    <head>
-        <title>Configuration</title>
-        <link rel='stylesheet' href='<? asset('css/configModule.css'); ?>' type='text/css' />
-    </head>
-    <body>
-        <div class="center">
-            <img src="<? asset('images/webPlane.png') ?>" alt="" />
-            <div class="content">
-                <p class="intro">Configuration base de donnees</p>
-                <p class="erreur"><?php if(isset($erreur))echo $erreur; ?></p>
-                <div class="form">
-                    <?php echo $form->toString(); ?>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+{% extends "noyau/configModule/views/default.html.twig" %}
+
+{% block intro %}
+    Configuration base de données
+{% endblock %}
+
+{% block content %}
+    <p class="erreur">{{ erreur }}</p>
+    <div class="form">
+        {{ form|raw }}
+    </div>
+{% endblock %}

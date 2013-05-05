@@ -7,10 +7,6 @@
 class Request
 {
     
-    /**
-     * @var (String)
-     * @desc Url appelé par l'utilisateur
-     */
     private $url;
     private $module;
     private $controller;
@@ -24,18 +20,42 @@ class Request
      */
     public function __construct()
     {
-        $this->url = $_SERVER['PATH_INFO'];
+        if(isset($_SERVER['PATH_INFO'])) {
+            $this->url = $_SERVER['PATH_INFO'];
+        }
+        else
+        {
+            header('Location: '.BASE_URL.DS.'configuration_webPlane1.0/home/');
+            exit;
+        }
     }
     
     public function getRecModule()
     {
         $Data = spyc_load_file(ROOT.DS.'config'.DS.'routing.yml');
         $routes = $this->findRoute($this->module, $Data);
-        $this->nameModule = $routes['resource'];
+        if($routes != null)
+        {
+            $this->nameModule = $routes['resource'];
+            return true;
+        }
+        else
+        {
+            $ini = new Ini('../config/parameters.ini');
+            $var = $ini->return_array();
+            if(array_key_exists('DATABASE', $var) && array_key_exists('SITE', $var))
+                echo "";
+            else 
+            {
+                header('Location: '.BASE_URL.DS.'configuration_webPlane1.0/home/');
+                exit;
+            }
+        }
     }
     
     /**
-     * Permet de retourner un tableau contenant les informations du route si elle existe
+     * Permet de retourner un tableau contenant les informations 
+     * de la route si elle existe
      * @param $name_url nom de l'url
      * @param $fileRouting Fichier contenant les routes
      * @return Tableau d'information d'une route
@@ -52,7 +72,7 @@ class Request
         }
         return null;
     }
-    
+     
     /**
      * Retourne la variable url
      * @name Request::getUrl()

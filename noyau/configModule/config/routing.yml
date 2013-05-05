@@ -11,3 +11,11 @@ config_index:
 config_bd:
     name_url: bd
     controller: ConfigController:bdConfig
+
+config_site:
+	name_url: site
+	controller: ConfigController:siteConfig
+
+config_fin:
+	name_url: succes
+	controller: ConfigController:finConfig
