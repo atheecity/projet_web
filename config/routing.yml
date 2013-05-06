@@ -7,3 +7,11 @@
 configModule:
 	name_url: configuration_webPlane1.0
 	resource: "noyau/configModule"
+
+defaultModule: 
+	name_url: /
+	resource: "module/defaultModule"
+
+userModule:
+	name_url: user
+	resource: "module/userModule"

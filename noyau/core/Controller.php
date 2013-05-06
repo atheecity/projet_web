@@ -16,6 +16,7 @@ class Controller
             'cache' => false 
         ));;
         $twig->addGlobal('twii', new Twii());
+        $twig->addGlobal('page', new Page());
         if($variables == null)
             echo $twig->render($view);
         else
@@ -70,6 +71,5 @@ class Controller
                 exit;
             }
         }
-    } 
-    
+    }
 }

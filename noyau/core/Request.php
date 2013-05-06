@@ -25,7 +25,7 @@ class Request
         }
         else
         {
-            header('Location: '.BASE_URL.DS.'configuration_webPlane1.0/home/');
+            header('Location: '.BASE_URL.DS.'configuration_webPlane1.0'.DS.'home.'.DS);
             exit;
         }
     }
@@ -41,13 +41,13 @@ class Request
         }
         else
         {
-            $ini = new Ini('../config/parameters.ini');
+            $ini = new Ini(BASE_URL.DS.'config'.DS.'parameters.ini');
             $var = $ini->return_array();
             if(array_key_exists('DATABASE', $var) && array_key_exists('SITE', $var))
                 echo "";
             else 
             {
-                header('Location: '.BASE_URL.DS.'configuration_webPlane1.0/home/');
+                header('Location: '.BASE_URL.DS.'configuration_webPlane1.0'.DS.'home'.DS);
                 exit;
             }
         }

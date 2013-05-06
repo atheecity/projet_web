@@ -2,7 +2,7 @@
 
 define('WEB', dirname(__FILE__)); //Chemin dossier WEB
 define('ROOT', dirname(WEB)); //Chemin dossier racine du projet
-define('DS', DIRECTORY_SEPARATOR); //Séparateur (windows ou linux)
+define('DS', '/'); //Séparateur (windows ou linux)
 define('BASE_URL', dirname(dirname($_SERVER['SCRIPT_NAME'])));
 define('CORE', ROOT.DS.'noyau'.DS.'core'); //Chemin pour accéder au dossier core
 
