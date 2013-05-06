@@ -1,0 +1,79 @@
+/* 
+    Document   : ThemeViolet
+    Created on : 5 mai 2013, 16:27:38
+    Author     : shinkimi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body
+{
+	background-color: rgb(197,90,189);
+	width:1250px;
+}
+
+#page
+{
+	vertical-align:middle;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#entete,#piedPage
+{
+	height:100px;
+	width:1000px;
+	vertical-align:middle;
+	background-color:rgb(117,0,147);
+	color: white;
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+}
+
+#piedPage
+{
+	margin-top:20px;
+}
+
+#sectionprincipale
+{
+	margin-top:20px;
+	height:800px;
+	width:1000px;
+}
+
+#menu
+{
+	background-color: rgb(109,1,77);
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+	float:left;
+	height: 800px;
+	width:200px;
+	color: white;
+}
+
+#onglets
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	list-style-type:none;
+}
+
+#sectionsecondaire
+{
+	box-shadow: 10px 10px 10px black;
+	border-radius:10px;
+	background-color: rgb(155,4,140);
+	float:left;
+	margin-left: 20px;
+	height: 800px;
+	width:780px;
+}

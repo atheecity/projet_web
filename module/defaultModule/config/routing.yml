@@ -1,0 +1,3 @@
+default_home:
+    name_url: /
+    controller: DefaultController:home

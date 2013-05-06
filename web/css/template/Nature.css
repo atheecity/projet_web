@@ -1,0 +1,74 @@
+/* 
+    Document   : Nature
+    Created on : 5 mai 2013, 16:21:58
+    Author     : shinkimi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body
+{
+	background: url('../../images/template/nature.jpg');
+	width:1250px;
+}
+
+#page
+{
+	vertical-align:middle;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#entete,#piedPage
+{
+	height:100px;
+	width:1000px;
+	vertical-align:middle;
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+}
+
+#piedPage
+{
+	margin-top:20px;
+}
+
+#sectionprincipale
+{
+	margin-top:20px;
+	height:800px;
+	width:1000px;
+}
+
+#menu
+{
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+	float:left;
+	height: 800px;
+	width:200px;
+}
+
+#onglets
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	list-style-type:none;
+}
+
+#sectionsecondaire
+{
+	box-shadow: 10px 10px 10px black;
+	border-radius:10px;
+	float:left;
+	margin-left: 20px;
+	height: 800px;
+	width:780px;
+}

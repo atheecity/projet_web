@@ -1,0 +1,76 @@
+/* 
+    Document   : ThemeBleu
+    Created on : 5 mai 2013, 16:19:27
+    Author     : shinkimi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body
+{
+	background-color: rgb(21,180,255);
+	width:1250px;
+}
+
+#page
+{
+	vertical-align:middle;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#entete,#piedPage
+{
+	height:100px;
+	width:1000px;
+	vertical-align:middle;
+	background-color:rgb(2,6,157);
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+}
+
+#piedPage
+{
+	margin-top:20px;
+}
+
+#sectionprincipale
+{
+	margin-top:20px;
+	height:800px;
+	width:1000px;
+}
+
+#menu
+{
+	background-color: rgb(0,128,192);
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+	height: 50px;
+	width:1000px;
+}
+
+#onglets
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	list-style-type:none;
+}
+
+#sectionsecondaire
+{
+	box-shadow: 10px 10px 10px black;
+	border-radius:10px;
+	background-color: rgb(0,0,255);
+	float:left;
+	margin-top: 20px;
+	height: 730px;
+	width:1000px;
+}

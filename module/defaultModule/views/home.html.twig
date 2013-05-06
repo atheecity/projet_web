@@ -1,0 +1,13 @@
+{{ page.entete('titre', 'template/Viticole.css') }}
+
+{{ page.MiseEnPage()|raw }}
+
+<h1>Titre</h1>
+
+{{ page.AjoutDansMenu("cinéma","http://www.cine-capvert.fr/") }}
+	
+{{ page.AjoutCodeInPart('<h1>Bienvenue</h1>',"entete") }}
+
+{{ page.fin() }}
+
+

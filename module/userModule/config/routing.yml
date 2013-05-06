@@ -1,0 +1,11 @@
+test_home:
+	name_url: connexion
+	controller: UserController:connexion
+
+user_inscription:
+	name_url: inscription
+	controller: UserController:inscription
+
+user_rechercheMdp:
+	name_url: recherche_mot_de_passe
+	controller: UserController:rechercheMdp

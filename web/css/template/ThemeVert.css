@@ -1,0 +1,76 @@
+/* 
+    Document   : ThemeVert
+    Created on : 5 mai 2013, 16:27:08
+    Author     : shinkimi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body
+{
+	background-color: rgb(94,251,26);
+	width:1250px;
+}
+
+#page
+{
+	vertical-align:middle;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#entete,#piedPage
+{
+	height:100px;
+	width:1000px;
+	vertical-align:middle;
+	background-color:rgb(43,153,60);
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+}
+
+#piedPage
+{
+	margin-top:20px;
+}
+
+#sectionprincipale
+{
+	margin-top:20px;
+	height:800px;
+	width:1000px;
+}
+
+#menu
+{
+	background-color: rgb(44,186,47);
+	border-radius:10px;
+	box-shadow: 10px 10px 10px black;
+	height: 50px;
+	width:1000px;
+}
+
+#onglets
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	list-style-type:none;
+}
+
+#sectionsecondaire
+{
+	box-shadow: 10px 10px 10px black;
+	border-radius:10px;
+	background-color: rgb(75,208,68);
+	float:left;
+	margin-top: 20px;
+	height: 730px;
+	width:1000px;
+}
