@@ -29,7 +29,8 @@ class Page {
 				<title>'.$titre.'</title>
 			</head>
 		<body>
-		<div id="page">';
+		<div id="page">
+		<div id="entete"></div>';
     }
 
 	//destructeur permettant de fermer la page html
@@ -49,6 +50,7 @@ class Page {
 	//fonction permettant d'insérer du code html ($code) dans un div d'identifiant $idDiv
 	public function AjoutCodeInPart($code,$id)
 	{
+		echo $code;
 		$this->pageweb.='<script type="text/javascript">
 		document.getElementById("'.$id.'").innerHTML += "'.$code.'";
 		</script>';

@@ -15,3 +15,6 @@ defaultModule:
 userModule:
 	name_url: user
 	resource: "module/userModule"
+
+carrouselModule:
+	resource: "module/carrouselModule"

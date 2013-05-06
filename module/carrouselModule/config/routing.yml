@@ -1,0 +1,2 @@
+carrousel_div:
+	controller: carrouselController:action

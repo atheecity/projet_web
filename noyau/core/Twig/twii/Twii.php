@@ -16,14 +16,23 @@ class Twii
 	* @param String $name_controller name_Module:name_Controller:name_function
 	* @return Charge un controller 
 	**/
-	public function request($name_controller)
+	public function request($name_controller, $parametre = null)
 	{
 		$param = explode(':', $name_controller);
         $fichRouting = spyc_load_file(ROOT.DS.'config'.DS.'routing.yml');
         $addressModule = $fichRouting[$param[0]]['resource'];
         require_once ROOT.DS.$addressModule.DS.'controller'.DS.$param[1].'.php';
         $ini = new $param[1]();
-        $ini->$param[2]();
+
+        if(isset($parametre))
+        {
+        	$var = $ini->$param[2]($parametre);
+        }
+        else
+        {	
+        	$ini->$param[2]();
+        }
+        return $var;
 	}
 
 }
