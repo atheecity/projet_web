@@ -72,4 +72,13 @@ class Controller
             }
         }
     }
+
+    public function connect()
+    {
+        session_start();
+        if(isset($_SESSION['pseudo']))
+            return true;
+        else
+            return false;
+    }
 }

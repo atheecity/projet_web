@@ -32,7 +32,16 @@ class Twii
         {	
         	$ini->$param[2]();
         }
-        return $var;
+        return isset($var);
 	}
 
+	public function connect()
+	{
+		if(session_id() == '')
+			session_start();
+		if(isset($_SESSION['pseudo']))
+			return true;
+		else
+			return false;
+	}
 }

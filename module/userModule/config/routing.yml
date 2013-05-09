@@ -9,3 +9,7 @@ user_inscription:
 user_rechercheMdp:
 	name_url: recherche_mot_de_passe
 	controller: UserController:rechercheMdp
+
+user_ModifProfil:
+	name_url: modification_profil
+	controller: UserController:ModifProfil
