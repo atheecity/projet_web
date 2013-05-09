@@ -6,7 +6,9 @@ class formulaire{
     
     function __construct($method, $action="")
     {
-        $this->formualire .= '<form method="'.$method.'">';
+        $this->formualire .= '<form method="'.$method.'" ';
+        if($action != null)
+            $this->formulaire .= 'action="'.$action.'">';
     }
 
     function add($tab)

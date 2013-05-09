@@ -22,3 +22,7 @@ carrouselModule:
 chat: 
 	name_url: chat 
 	resource: "module/chat" 
+
+docModule:
+	name_url: doc_JCAC
+	resource: "module/docModule"
