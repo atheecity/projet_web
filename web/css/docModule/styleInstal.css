@@ -1,0 +1,217 @@
+/* Eléments principaux de la page */
+
+body
+{
+    background: url('../../images/docModule/fond_jaune.png');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+#bloc_page
+{
+    width: 900px;
+    margin: auto;
+}
+
+section h1, footer h1, nav a
+{
+    font-family: Dayrom, serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/* Header */
+
+header
+{
+    background: url('../../images/docModule/separateur.png') repeat-x bottom;
+}
+
+#titre_principal
+{
+    display: inline-block;
+}
+
+header h1
+{
+    font-family: 'BallparkWeiner', serif;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+#logo, header h1
+{
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+header h2
+{
+    font-family: Dayrom, serif;
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+/* Navigation */
+
+nav
+{
+    display: inline-block;
+    width: 740px;
+    text-align: right;
+}
+
+nav ul
+{
+    list-style-type: none;
+}
+
+nav li
+{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+/* Bannière */
+
+#banniere_image
+{
+    margin-top: 15px;
+    height: 200px;
+    border-radius: 5px;
+    background: url('../../images/docModule/sanfrancisco.jpg') no-repeat;
+    position: relative;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+/* Corps */
+
+article, aside
+{
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+}
+
+article
+{
+    margin-right: 15px;
+}
+
+.ico_categorie
+{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+article p
+{
+    font-size: 0.8em;
+}
+
+aside
+{
+    position: relative;
+    width: 235px;
+    background-color: #706b64;
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+}
+
+#fleche_bulle
+{
+    position: absolute;
+    top: 100px;
+    left: -12px;
+}
+
+aside img
+{
+    margin-right: 5px;
+}
+
+/* Footer */
+
+footer
+{
+    background:  url('../../images/docModule/ico_top.png') no-repeat top center, url('../../images/docModule/separateur.png') repeat-x top, url('../../images/docModule/ombre.png') repeat-x top;
+    padding-top: 25px;
+}
+
+footer p
+{
+    font-size: 0.8em;
+}
+
+footer h1
+{
+    font-size: 1.1em;
+}
+
+ #membre
+{
+    vertical-align: top;
+}
+
+#membre ul
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    list-style-image: url('../../images/docModule/ico_liensexterne.png');
+    padding-left: 2px;
+}
+
+#membre a
+{
+    text-decoration: none;
+    color: #760001;
+}
+
+
+/* Correctifs pour les vieilles versions d'Internet Explorer */
+
+/* Pour activer un positionnement type inline-block sur les vieilles versions d'IE */
+
+.old_ie #titre_principal, .old_ie #logo, .old_ie header h1, .old_ie nav, .old_ie nav li, .old_ie .bouton_rouge, .old_ie article, .old_ie aside, .old_ie #tweet, .old_ie #mes_photos, .old_ie #membre, .old_ie #membre ul
+{
+    display: inline;
+    zoom: 1;
+}
+
+/* Quelques ajustements pour les vieilles versions d'IE */
+
+.old_ie section h1, .ie8 section h1
+{
+    font-size: 1.1em;
+}
+
+.old_ie footer div, .ie8 footer div
+{
+    margin-top: 30px;
+    background: url('../../images/docModule/separateur.png') repeat-x top;
+}
+

@@ -1,0 +1,84 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+<h2>Explication du module CHAT</h2>
+                    <h3>Fonctionnalité</h3>
+                    <p>Le module de CHAT batît sur une architecture Model Vue Controller, permet de créer rapidement
+                        un chat simple et efficace stockant tous les messages
+                        postés par les utilisateurs ainsi que leurs pseudonymes
+                        dans une base de données dont il gère totalement.
+                        L'affichage du chat est géré dans la vue <strong> vueChat.php </strong>, 
+                        modifiable à souhait, avec sa feuille de style <strong> style.css </strong> (voir le détail des fichiers).
+                        Pour plus d'ergonomie, le pseudonyme de l'utilisateur est stocké dans un coockie pour lui éviter d'avoir à rettaper son pseudonyme.
+                    </p>
+                    <h3>Détaille des fichiers</h3>
+
+                    <h4>routing.yml</h4>
+                    <p>Jumelé au fichier de routage du framework, ce fichier est un fichier de routage permettant de lancer le CHAT à travers l'url. Il prend en 
+                        compte deux valeurs:
+                    </p>
+
+                    <ol class="liste_fichier">
+                        <li><strong> name_url </strong>: chaine de caractère qui sera ajoutée à la fin de l'url</li>
+                        <li><strong> controller </strong>: nom du controleur principale du module ainsi que la fonction à exécuter</li>
+                    </ol>
+
+                    <h4>chatController.php</h4>
+                    <p>Controleur principale du module, il permet à travers l'utilisation du model <strong> Chat.php </strong> d'enregistrer 
+                        les pseudonymes et messages postés par les utilisateurs via un formulaire puis de relancer la vue <strong> vueChat.php </strong>
+                    </p>
+
+                    <h4>Chat.php</h4>
+                    <p>Model du module dans l'architecture MVC, il permet de:</p>
+                    <ol class="liste_description">
+                        <li>Enregistrer le pseudonyme et le message d'un utilisateur dans la base de données
+                            via l'utilisation de sa fonction<strong> post(pseudonyme de l'utilisateur,message) </strong>
+                        </li>
+                        <li>Récupérer les derniers messages postés sur le chat via l'utilisation de sa fonction<strong> recMessages(nombre de message à récupérer) </strong> 
+                        </li>
+                        <li>Récupère tous les messages postés sur le chat via l'utilisation de sa fonction<strong> allMessages() </strong>
+                        </li>
+                        <li>Enregistrer le pseudonyme d'un utilisateur dans un cookie d'une durée d'un ans 
+                            via l'utilisation de sa fonction<strong> cookie(pseudonyme de l'utilisateur) </strong>
+                        </li>
+                        <li>Afficher les derniers messages postés sur le forum sous forme de chaine de caractères via l'utilisation de <strong> __toString </strong>
+                        </li>
+                    </ol>
+
+                    <h4>vueChat.php</h4>
+                    <p>Exemple de vue utilisée pour l'affichage du chat, ici seul la présence d'un formulaire utilisant la méthode <strong> post </strong> 
+                        et l'appel au script javascript sont nécessaires pour un fonctionnement optimal du chat. Le reste est entièrement modulable.
+                    </p>
+
+                    <h4>dsl_script.php</h4>
+                    <p>Script permetant le rafraichissement de l'affichage des messages</p>
+                    <h4>style.css</h4>
+                    <p>Exemple de feuille de style de la vue du chat</p>
+
+                    <h2>Instalation du module CHAT dans le framework JCAC</h2>
+
+                    <h3>Placement des fichiers et dossiers</h3>
+                    <p>Pour rendre le module opératinnel, il est nécessaire de déplacer 
+                        les répertoires ainsi que les fichiers du module aux emplacements
+                        prévus dans le framework. Voici les manipulations à effectuer:
+                    </p>
+
+                    <ol id='liste_placement'>
+                        <li>Placer le répertoire <strong> chat </strong> dans le répertoire  <strong> module  </strong> du framework</li>
+                        <li>Placer le script <strong> dsl_script.php </strong> dans le repertoire <strong> js </strong> dans <strong> web </strong></li>
+                        <li> Créer un répertoire <strong> chatModule </strong> dans le repertoire <strong> js </strong> dans <strong> web </strong>
+                            et placer le fichier <strong> style.css </strong> à l'interrieur du répertoire </li>
+                    </ol>
+
+                    <h3>Modification à effectuer</h3>
+                    <p>Après avoir déplacé les fichiers et répertoires aux emplacements adéquates, il faut maintenant référencer le module.
+                        Pour ce faire, il faut ajouter au fichier<strong>  routing.yml </strong> contenue dans le répertoire <strong> config </strong>: 
+                        </br>
+                        chat: </br>
+                        name_url: chat </br>
+                        resource: "module/chat" </br> 
+                        Voila le module est prèt à l'emploie, il suffira donc d'utiliser l'url pour lancer la page soit rajouter à l'url du site
+                        le  <strong> name_url  </strong> du fichier <strong>  routing.yml </strong>  du répertoire <strong> config </strong> du
+                        framework concaténé à celui du répertoire <strong> config </strong> du module
+                    </p>
+{% endblock %}

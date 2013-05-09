@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ twii.asset('css/docModule/styleInstal.css') }}" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <title>Documentation JCAC</title>
+    </head>
+    
+    <!--[if IE 6 ]><body class="ie6 old_ie"><![endif]-->
+    <!--[if IE 7 ]><body class="ie7 old_ie"><![endif]-->
+    <!--[if IE 8 ]><body class="ie8"><![endif]-->
+    <!--[if IE 9 ]><body class="ie9"><![endif]-->
+    <!--[if !IE]><!--><body><!--<![endif]-->
+        <div id="bloc_page">
+            <header>
+                <div id="titre_principal">
+                    <img src="{{ twii.asset('images/docModule/logo.png') }}" alt="Logo" id="logo" />
+                    <h1>JCAC</h1>
+                    <h2>Framework PHP</h2>
+                </div>
+                <nav>
+                    <ul>
+                      <li><a href="../../doc_JCAC/home/">Accueil</a></li>
+                        <li><a href="../../doc_JCAC/chat/">Module CHAT</a></li>
+                         <li><a href="../../doc_JCAC/bd/">Module BD</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section>
+                <article>
+                    {% block article %}
+                    {% endblock %}
+                </article>
+            </section>
+            <footer>
+                <div id="membre">
+                    <h1>Membre</h1>
+                    <ul>
+                        <li><a href="#">ADOMOU Audace</a></li>
+                        <li><a href="#">MOLIN Charles</a></li>
+                         <li><a href="#">PONCIANO Jean-Jacques</a></li>
+                        <li><a href="#">PRUDHOMME Claire</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

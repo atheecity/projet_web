@@ -1,0 +1,11 @@
+doc_index:
+	name_url: home
+	controller: docController:index
+
+doc_chat:
+	name_url: chat
+	controller: docController:chat
+
+doc_bd:
+	name_url: bd
+	controller: docController:bd

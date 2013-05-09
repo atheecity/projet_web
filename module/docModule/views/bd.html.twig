@@ -1,0 +1,82 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+<h2>Explication du module BD</h2>
+                     <p>
+                         Le module de Base de Données est un module intégré par défaut au framework et permet de gérer les bases de données <strong>mysql</strong> 
+                         de manière simple et efficace.
+                        Elle est composée des fonctions suivantes:
+                     </p>
+                     <h4 class="description">query(requête sql)</h4>
+                    
+                     <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre une requête sql en chaine de caractères </li>
+                          <li><strong>Exemple:</strong> query("Select * from exemple")</li>
+                          <li><strong>Résultat:</strong> Sous forme de tableau multidimentionnel. </li>
+                     </ol>
+                     <h4 class="description">queryPX(requête sql avec des ?,tableau de valeur)</h4>
+                    <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre une requête sql avec des ? à la place des variables, puis le tableau contenant les variables </li>
+                          <li><strong>Exemple:</strong> queryPX("Select * from ? where id=? and nom=?",array($table,'10','exemple)</li>
+                          <li><strong>Résultat:</strong> Sous forme de tableau multidimentionnel. </li>
+                     </ol>  
+                       <h4 class="description">inserInto(nom table,tableau des valeurs)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre le nom de la table et tableau contenant les valeurs </li>
+                          <li><strong>Exemple:</strong> inserInto($talbe,array(10,'paul',NULL)</li>
+                     </ol>
+                      <h4 class="description">mod(requête sql avec des ?,tableau de valeur)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre la requête sql et tableau contenant les valeurs </li>
+                          <li><strong>Exemple:</strong> mod("("UPDATE COMMENTAIRES SET pseudo = '?' WHERE id =?",array('paul',1)</li>
+                          <li><strong>Résultat:</strong> modifie uniquement la base de données. </li>
+                     </ol>
+                      
+                       <h4 class="description">create(requête sql avec des ?,tableau de valeur)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre la requête sql et tableau contenant les valeurs </li>
+                          <li><strong>Exemple:</strong> create("CREATE TABLE IF NOT EXISTS chat( ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,pseudo VARCHAR(20),message TEXT);", null);</li>
+                     </ol>
+                       
+                        <h4 class="description">getListTables()</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong> tel quel</li>
+                          <li><strong>Exemple:</strong> $var=getListTables()</li>
+                           <li><strong>Résultat:</strong>Recupère la liste de toutes les tables sous forme de tableau</li>
+                  </ol>
+                       
+                         <h4 class="description">description(nom de la table)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre le nom de la table</li>
+                          <li><strong>Exemple:</strong> description('exemple')</li>
+                      <li><strong>Résultat:</strong> renvoie la description de la table passée en paramètre</li>
+                  </ol>
+                         
+                         <h4 class="description">drop(nom de la table)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre le nom de la table</li>
+                          <li><strong>Exemple:</strong> drop('exemple')</li>
+                      <li><strong>Résultat:</strong> supprime la table</li>
+                  </ol>
+                       <h4 class="description">reset(nom de la table)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre le nom de la table</li>
+                          <li><strong>Exemple:</strong> reset('exemple')</li>
+                      <li><strong>Résultat:</strong> efface toute les données de la table</li>
+                  </ol>
+                       
+                       <h4 class="description">connexion()</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong> tel quel</li>
+                          <li><strong>Exemple:</strong> connexion()</li>
+                      <li><strong>Résultat:</strong> Permet la connexion à la base de données en chargeant les données à partir du framework</li>
+                  </ol>
+                       
+                       h4 class="description">connexion2($path_fichier)</h4>
+                  <ol class="liste_description">
+                         <li><strong>Utilisation:</strong>Passer en paramètre le chemin d'un fichier contenant les informations nécessaire pour
+                             la connexion à la base de données</li>
+                          <li><strong>Exemple:</strong> connexion2("../fichier")</li>
+                          <li><strong>Résultat:</strong> Permet la connexion à la base de données en chargeant les données du fichier passé en paramètre</li>
+                  </ol>
+{% endblock %}
