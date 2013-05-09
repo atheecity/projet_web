@@ -1,0 +1,14 @@
+<?php header("Content-type: text/javascript"); ?>
+
+var string = '<?php
+include_once("model/Bd.php");
+include_once("model/chat/Chat.php");
+
+//connexion à la base de données
+$bdd = new Bd("localhost", "monty", "monty", "monty");
+//creation de la gestion du chat
+$chat = new Chat($bdd);
+
+echo $chat;
+?>';
+messages(string);

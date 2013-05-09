@@ -1,0 +1,7 @@
+chat_home:
+	name_url:home
+	controller: chatController: action
+
+chat_test:
+	name_url: test
+	controller: chatController:test

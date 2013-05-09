@@ -1,0 +1,3 @@
+chat_home:
+	name_url: home
+	controller: chatController:action
