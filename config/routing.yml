@@ -18,3 +18,7 @@ userModule:
 
 carrouselModule:
 	resource: "module/carrouselModule"
+
+chat: 
+	name_url: chat 
+	resource: "module/chat" 

@@ -64,10 +64,13 @@ class Request
     {
         foreach($fileRouting as $val)
         {
-            if($name_url == $val['name_url'])
+            if(isset($val['name_url']))
             {
-                $routes = array_slice($val, 0);
-                return $routes;
+                if($name_url == $val['name_url'])
+                {
+                    $routes = array_slice($val, 0);
+                    return $routes;
+                }
             }
         }
         return null;
