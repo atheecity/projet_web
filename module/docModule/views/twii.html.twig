@@ -1,0 +1,43 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+
+<h2>Classe twii.php</h2>
+
+<p>	
+Dans le projet nous avons utilisé un système de templates déjà existant appelé twig, pour nous permettre de gérer les vues. Dans ce système nous avons créé la classe twii. Voici ses fonctionnalités:
+</p>
+
+	<h3>asset()</h3>
+	
+<p>
+Cette fonction permet de charger tous les documents placés dans le dossier \texttt{/web} à la racine du site web (fichier css, js et images).
+</br>
+Exemple:
+</p>	
+<strong>
+<code>twii.asset('css/template/orange.css')</code>
+</strong>
+	
+	<h3>request()</h3>
+
+<p>	
+Cette fonction permet de charger un contrôleur depuis une vue. </br>
+Exemple:
+</p>	
+<strong>
+<code>twii.request('nameModule:nameController:nameFonction', parametre)</code>
+</strong>
+
+		<h3>connect()</h3>
+
+<p>		
+La dernière fonction que nous avons créée permet de savoir si un utilisateur est connecté ou non.
+Cette fonction retourne true si l'utilisateur est connecté et false s'il ne l'est pas.  
+</p>	
+<strong>
+<code>if(twii.connect())  endif</code>
+</strong>
+
+{% endblock %}
+

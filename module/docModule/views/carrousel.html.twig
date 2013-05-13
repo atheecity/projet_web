@@ -1,0 +1,23 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+<h2>Explication de la classe Carrousel</h2>
+
+<p>	
+Le module carrousel vous permettra de faire défiler des images sur votre page web.</br>
+Pour créer un carrousel, il faut utiliser la fonction <strong>request()</strong> de twig en lui passant tout d'abord le chemin permettant d'atteindre la fonction action du contrôleur du carrousel, puis les paramètres nécessaires au constructeur de la classe carrousel, 
+c'est à dire un tableau contenant les chemins d'images, un tableau contenant respectivement les liens correspondant à chaque image, le temps écoulé entre chaque changement d'image du carrousel, la largeur en pixel du carrousel et enfin sa hauteur.
+Les images ne pourront être cliquables que si les deux tableaux sont de mêmes tailles. Dans le cas où l'on souhaiterait avoir que certaines images cliquables il suffirait de mettre <strong>""</strong> comme lien à celles qui ne le sont pas. <br><br>
+
+Exemple sans lien cliquable:<br>
+<strong>
+twii.request("carrouselModule:carrouselController:action",[["template/viticoleverticale.png","template/orangev.png","template/nature.png"], [],1, 50, 50] )
+</strong> <br><br>
+
+Exemple avec lien cliquable:<br>
+<strong>
+twii.request("carrouselModule:carrouselController:action",[["template/viticoleverticale.png","template/orangev.png","template/nature.png"], [],1, 50, 50] )
+</strong> <br><br>
+
+</p>
+{% endblock %}

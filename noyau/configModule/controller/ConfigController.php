@@ -12,7 +12,7 @@ class ConfigController extends Controller
     {
         //Création du formulaire 
         $form = new formulaire('POST');
-        $form->add(array('typ' => 'text', 'name' => 'database_name', 'placeholder' => 'Host'));
+        $form->add(array('type' => 'text', 'name' => 'database_name', 'placeholder' => 'Host'));
         $form->add(array('type' => 'text', 'name' => 'database_user', 'placeholder' => 'Utilisateur'));
         $form->add(array('type' => 'password', 'name' => 'database_password', 'placeholder' => 'Mot de passe'));
         $form->add(array('type' => 'text', 'name' => 'database_db', 'placeholder' => 'Base de donnees'));

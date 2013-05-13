@@ -29,8 +29,7 @@ class Page {
 				<title>'.$titre.'</title>
 			</head>
 		<body>
-		<div id="page">
-		<div id="entete"></div>';
+		<div id="page">';
     }
 
 	//destructeur permettant de fermer la page html
@@ -41,18 +40,17 @@ class Page {
 	</html>';
 	}
 	
-	/*//fonction permettant d'insérer du code html ($code) dans la page web
+	//fonction permettant d'insérer du code html ($code) dans la page web
 	public function AjoutCode($code)
 	{
 		$this->pageweb.=$code;
-	}*/
+	}
 	
 	//fonction permettant d'insérer du code html ($code) dans un div d'identifiant $idDiv
 	public function AjoutCodeInPart($code,$id)
 	{
-		echo $code;
 		$this->pageweb.='<script type="text/javascript">
-		document.getElementById("'.$id.'").innerHTML += "'.$code.'";
+		document.getElementById("entete").innerHTML += "'.$code.'";
 		</script>';
 	}
 	

@@ -1,0 +1,81 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+
+<h2>La classe Page.php et le template default.html.twig</h2>
+
+<p>	
+La base d'une page web est sa structure. Et c'est pour créer cette structure ainsi que le code d'entête et de pied de page nécessaire à la création d'une page html que la classe <strong>Page.php</strong> et le template <strong>default.html.twig</strong> ont été créés.
+
+En effet, la classe Page permettra de créer plutôt une page statique tandis que le template default, lui pourra être utilisé pour une page dynamique et surtout pour pouvoir insérer n'importe quel module créé.
+Ces deux éléments bien que différents ont été créés avec la même structure permettant que si on les associe à une même feuille de style, leur visualisation basique soit la-même.
+
+Pour commencer, il faut savoir qu'un template est une page de code qui permet d'imbriquer plusieurs éléments les uns dans les autres.
+</p>
+
+			<h3>Classe Page.php</h3>
+<p>
+La classe Page est une classe php utilisé par l'outil twig.
+Sa construction s'effectue donc à l'aide de fonction qui génère automatiquement le code nécessaire et voulu en le plaçant aux endroits choisis.
+</p>
+
+			<h3>Ouverture de la page</h3>
+
+<p>
+L'ouverture de la page se fait par la première fonction du template Page.
+Cette première fonction est un peu comme un constructeur de classe, elle permet que le code d'ouverture de la page web soit générée automatiquement, pour cela il suffit de lui donner en paramètre le nom de votre page et le nom du fichier css  que vous souhaitez lui associer (cf. « thèmes css ») .
+Exemple :
+
+<strong>
+<code>page.entete('titre', 'template/Viticole.css')</code>
+</strong>
+</p>
+
+			<h3>Construction de la page</h3>
+
+			<p>
+Pour le contenu de votre page web vous avez le choix entre 2 stratégies :
+
+Structure libre :
+C'est à vous d'insérer tout le code que vous souhaitez dans votre page web, vous permettant de créer votre propre structure. Pour cela utiliser, la méthode AjoutCode(code).<br>
+Exemple:<br>
+<strong>
+page.AjoutCode(Bienvenue)
+</strong><br><br>
+
+Structure prédéfinie :
+Pour créer un site rapidement, nous vous permettons de créer une structure de base de votre page web à l'aide de:<br> 
+<strong>
+<code>page.MiseEnPage()</code>
+</strong>
+<p>
+La structure créée comprendra un header d'identifiant entete, un footer d'identifiant piedPage, une section d'identifiant sectionsecondaire, ainsi que d'un menu nav.
+Afin d'ajouter du code dans  les trois premières parties citées, utilisez la méthode AjoutCodeInPart('code','id').<br>
+Exemple :
+<strong>
+<code>page.AjoutCodeInPart('Bienvenue', "entete")</code><br><br>
+</strong>
+En revanche pour ajouter un « onglet » à votre menu utilisez la méthode AjoutDansMenu('libelle','lien').<br>
+Exemple :
+<strong>
+<code>page.AjoutDansMenu("cinéma","http://www.cine-capvert.fr/")</code>
+</strong>
+</ul>
+</p>
+<h3>Fermeture de la page</h3>
+
+<p>Une fois votre page créée à votre idée, il vous faudra la finaliser avec le code suivant:
+<strong>
+<code>page.fin()</code>
+</strong>	
+Ce qui aura pour effet de générer le code de fin d'une page html.</p>
+
+		<h3>Template default.html.twig</h2>
+	<p>	
+Contrairement à la classe précédente le code html de la page créée par ce template est totalement visible. En effet ce template est tout simplement une page contenant le code html classique avec en-tête et fermeture d'une page html.
+Comme pour le template précédent on peut y retrouver la même structure avec un header, un footer, un nav et une section (plus exactement deux sections puisqu'il y en a une qui contient le nav et la deuxième section).
+Par conséquent, l'utilisation de ce template se fera par insertion dans des blocs. En effet, la page décrite précédemment est remplie de blocs aux endroits susceptibles d'être complétés.
+Afin d'utiliser ce template, il est nécessaire de connaitre les blocs existants pour cela voir le fichier default.html.twig dans le dossier /module/defaultModule/views/.
+
+</p>
+{% endblock %}

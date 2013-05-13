@@ -5,7 +5,7 @@ class DefaultController extends Controller
 	
 	function home()
 	{
-		$this->renderView('module/defaultModule/views/vues2.html.twig');
+		$this->renderView('module/defaultModule/views/home.html.twig');
 	}
 
 }

@@ -1,0 +1,5 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+	{{ twii.request('userModule:UserController:ModifProfil') }}
+{% endblock %}

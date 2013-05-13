@@ -61,7 +61,7 @@ class Carousselle {
 		$this->carousselle.='var cpt=0; var taille=tabimage.length;';
 		
 		//création de la fonction qui change l'image
-		$this->carousselle.='function changement(){ document.getElementById("emplacementCarousselle").innerHTML = \'<a href=\'+tabliens[cpt%taille]+\'><img src="web/images/\'+tabimage[cpt%taille]+\'" alt="image"  height="'.$this->hauteur.' px" width="'.$this->largeur.'px"/></a>\';
+		$this->carousselle.='function changement(){ document.getElementById("emplacementCarousselle").innerHTML = \'<a href=\'+tabliens[cpt%taille]+\'><img src="'.BASE_URL.'/web/images/\'+tabimage[cpt%taille]+\'" alt="image"  height="'.$this->hauteur.' px" width="'.$this->largeur.'px"/></a>\';
 		    cpt=cpt+1;
                     setTimeout("changement()", 10000);}';
 		
@@ -88,7 +88,7 @@ class Carousselle {
 		$this->carousselle.='var cpt=0; var taille=tabimage.length;';
 		
 		//création de la fonction qui change l'image
-		$this->carousselle.='function changement(){ document.getElementById("emplacementCarousselle").innerHTML = \'<img src="web/images/\'+tabimage[cpt%taille]+\'" alt="image"  height="'.$this->hauteur.'px" width="'.$this->largeur.'px"/>\';
+		$this->carousselle.='function changement(){ document.getElementById("emplacementCarousselle").innerHTML = \'<img src="'.BASE_URL.'/web/images/\'+tabimage[cpt%taille]+\'" alt="image"  height="'.$this->hauteur.'px" width="'.$this->largeur.'px"/>\';
 		    cpt=cpt+1;
                     setTimeout("changement()", 10000);}';
 		

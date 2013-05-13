@@ -1,11 +1,4 @@
-{{ page.entete('titre', 'template/Viticole.css') }}
+{% extends "module/defaultModule/views/default.html.twig" %}
 
-{{ page.MiseEnPage() }}
-
-{{ page.AjoutDansMenu("cinéma","http://www.cine-capvert.fr/") }}
-
-{{ page.AjoutCodeInPart( twii.request("carrouselModule:carrouselController:action", [["template/viticoleverticale.png","template/orangev.png","template/nature.png","template/bleu.png","template/gothique.png","template/orange.png","template/viticole.png","template/vert.png","template/violet.png"], [],1, 50, 50] ), "entete") }}
-
-{{ page.fin() }}
 
 

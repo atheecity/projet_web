@@ -1,0 +1,97 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+<h2>Explication du module USER</h2>
+                    <h3>Fonctionnalité</h3>
+                    <p>
+					Le module Utilisateur bâti sur une architecture Modèle, Vue, Contrôleur, 
+					intègre par défaut  tout ce qui concerne la gestion d'un utilisateur, 
+					c'est-à-dire :
+					</p>
+					<ul>
+						<li>La connexion</li>
+						<li>L'inscription</li>
+						<li>La recherche du mot de passe</li>
+						<li>La modification du Profil Utilisateur</li>
+                    </p>
+                    <h3>Détails des fichiers</h3>
+
+                    <h4>routing.yml</h4>
+                    <p>
+					Jumelé au fichier de routage du framework, 
+					ce fichier est un fichier de routage permettant de lancer 
+					les différents formulaires à travers l'url. 
+					Il  prend en compte deux valeurs:
+                    </p>
+
+                    <ol class="liste_fichier">
+                        <li><strong> name_url </strong>: chaine de caractère qui sera ajoutée à la fin de l'url</li>
+                        <li><strong> controller </strong>: nom du controleur principale du module ainsi que la fonction à exécuter</li>
+                    </ol>
+
+                    <h4>UserController.php</h4>
+                    <p>
+					Contrôleur principale du module, il permet à travers 
+					l'utilisation du modèle userModel.php de manipuler les 
+					données des utilisateurs via des formulaires, 
+					grâce aux fichiers contenus dans le dossier views à savoir:</br>
+                    index.html.twig : Fenêtre de connexion</br>
+					inscription.html.twig : Fenêtre d'Inscription</br>
+					rechercheMdp.html.twig : Fenêtre de recherche de mot de Passe</br>
+					modifPro.html.twig : Fenêtre de Modification de Profil</br>
+					</p>
+
+                    <h4>UserModel.php</h4>
+                    <p>Modèle du module dans l'architecture MVC, il permet de:</p>
+                    <ol class="liste_description">
+                        <li>Connecter un utilisateur grâce à la fonction <strong>Connect (pseudo, motdepasse)</strong>.
+                        </li>
+                        <li>Vérifier l'existence ou non d'un pseudo lors de la création d'un nouveau compte utilisateur 
+						grâce à la fonction <strong>verifPseudo(pseudo) </strong> 
+                        </li>
+                        <li>Tester l'existence ou non d'un pseudo lors de la connexion, et ainsi rediriger l'utilisateur 
+						vers la fenêtre de recherche de mot de passe ou vers la fenêtre de création de compte quand le pseudo 
+						n'existe pas. Ceci est géré grâce à la fonction<strong> UsrID(pseudo)</strong>
+                        </li>
+                        <li>Rechercher le mot de passe de l'utilisateur et le lui envoyer via l'adresse email  de l'utilisateur, 
+						grâce à la  fonction
+						<strong>RechPwd(email)</strong>
+                        </li>
+                        <li>
+						Enregistrer les informations du nouvel utilisateur grâce 
+						à la fonction
+						<strong> Insert (pseudo, motdepasse, nom, email)</strong>
+                        </li>
+						<li>
+						Mettre à jour les informations d'un utilisateur via la fonction <strong>Update(mail,pwd,ident)</strong>, 
+						avec la condition que l'utilisateur soit déjà connecté.
+						</li>
+					</ol>
+
+                    
+                    <h2>Installation du module Utilisateur  dans le framework JCAC</h2>
+
+                    <h3>Placement des fichiers et dossiers</h3>
+                    <p>
+					Pour rendre le module opérationnel, il est nécessaire de déplacer 
+					les répertoires ainsi que les fichiers du module aux 
+					emplacements prévus dans le framework. Ainsi il suffit de 
+					déplacer le dossier userModule (contenant aussi la base de
+					donnée qu'il faudra importer  dans son système de gestion de base de données) 
+					dans  le répertoire module du framework.
+                    </p>
+
+                    <h3>Modification à effectuer</h3>
+                    <p>
+					Après avoir déplacé les fichiers et répertoires aux emplacements adéquates, 
+					il faut maintenant référencer le module. Pour ce faire, il faut ajouter au 
+					fichier <strong>routing.yml</strong> contenu dans le répertoire <strong> config </strong>: 
+                        </br>
+                        chat: </br>
+                        name_url: chat </br>
+                        resource: "module/chat" </br> 
+                        Voilà le module est prêt à l'emploi, il suffira donc d'utiliser l'url pour lancer la page,
+						soit rajouter à l'url du site le <strong>name_url</strong> du fichier <strong>routing.yml</strong> du répertoire <strong>config</strong> du 
+						framework concaténé à celui du répertoire <strong>config</strong> du module
+					</p>
+{% endblock %}

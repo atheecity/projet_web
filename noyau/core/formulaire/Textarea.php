@@ -21,7 +21,7 @@ class Textarea
     
     function __construct()
     {
-        $this->textarea .= '<textarea ';
+        $this->textarea .= '<div><textarea ';
     }
     
     function addPropriete($prop)
@@ -56,6 +56,6 @@ class Textarea
     
     function __destruct()
     {
-        $this->textarea .= '></textarea>';
+        $this->textarea .= '></textarea></div>';
     }
 }

@@ -14,7 +14,8 @@ class carrouselController extends Controller
 		$large = $param[4];
 
 		$carousselle = new Carousselle($tabImage,$tablien,$tpsseconde,$haut,$large);
-		return $carousselle;
-	}
 
+		$this->renderView('module/carrouselModule/views/caroussel.html.twig', array(
+			'carou' => $carousselle->__toString()));
+	}
 }

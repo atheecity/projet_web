@@ -44,4 +44,11 @@ class Twii
 		else
 			return false;
 	}
+
+	public function ini($name, $val)
+	{
+		$ini = new Ini('../config/parameters.ini');
+		$tab = $ini->return_array($name);
+		echo $tab[$val];
+	}
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+					<!--[if lt IE 9]>
+					<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+					<![endif]-->
+		{% block css %}
+			<link rel="stylesheet" href="{{ twii.asset('css/template/Themeorange.css') }}"/>
+		{% endblock %}
+		<title>{%block title %}{%endblock%}</title>
+	</head>
+	<body>
+		<div id="page">
+			<header id="entete">{%block entete %}<h1>{{ twii.ini('SITE', 'name_site') }}{%endblock%}</h1></header>
+			<section id="sectionprincipale"> 
+				<nav id="menu"> 
+					<ul id="onglets"> 
+						{%block li %}{%endblock%}
+					</ul> 
+				</nav>
+				<section id="sectionsecondaire">{%block section %}fdgdfgdgdg{%endblock%}</section>
+			</section>
+			<footer id="piedPage">{%block footer %}{%endblock%}</footer>
+		</div>
+	</body>
+</html>

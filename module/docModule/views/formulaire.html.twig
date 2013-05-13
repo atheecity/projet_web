@@ -1,0 +1,57 @@
+{% extends "module/docModule/views/default.html.twig" %}
+
+{% block article %}
+
+<h2>Explication classe formulaire</h2>
+
+<p>
+La classe formulaire est intégrée par défaut au framework et permet de créer des formulaires facilement. Pour créer un formulaire il faut instancier l'objet Formulaire.</br> 
+</br>
+<strong>form = new formulaire(param1, param2);</strong></br>
+</br>
+param1: méthode POST ou GET</br>
+param2: nom de l'action (peut être null)\newline</br>
+</br>
+Nous allons maintenant voir les différentes fonctions de la classe formulaire. 
+</p>
+
+<h3>Fonction add</h3>
+<p>
+La fonction add permet d'ajouter un champ de type input au formulaire. Voici un exemple de code:</br>
+
+<strong>form->add(array('type' => 'text, 'name' => 'name'));</strong></br>
+</br>
+Le paramètre de la fonction est un tableau contenant les attributs HTML, seuls les attributs type et name sont obligatoires. 
+</p>
+
+<h3>Fonction addselect</h3>
+<p>
+La fonction addSelect permet d'ajouter un champ de type select.
+</br>
+<strong>form->addSelect(attributs, options);</strong></br>
+</br>
+attributs: permet d'ajouter des attributs au select</br>
+option: permet d'ajouter des options dans le select
+</p>
+
+<h3>Fonction addTextarea</h3>
+<p>
+La fonction addTextarea permet d'ajouter un champ de type textarea.</br>
+
+<strong>form->addTextarea(options);</strong></br>
+</br>
+options: permet d'ajouter des options au champ textarea
+</p>
+
+<h3>Fonction addButton</h3>
+<p>
+La fonction addButton permet d'ajouter un champ de type button.</br>
+
+<strong>form->addButton(attributs, text);</strong></br>
+</br>
+attributs: tableau contenant les attributs au champ button</br>
+text: nom du bouton qui va être affiché \newline</br>
+</br>
+Le formulaire inclut automatiquement les vérifications en HTML5 pour tout les champs.
+</p>
+{% endblock %}

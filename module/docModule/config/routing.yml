@@ -9,3 +9,31 @@ doc_chat:
 doc_bd:
 	name_url: bd
 	controller: docController:bd
+
+doc_contact:
+	name_url: contact
+	controller: docController:contact
+
+doc_connexion:
+	name_url: connexion
+	controller: docController:connexion
+
+doc_user:
+	name_url: user
+	controller: docController:user
+
+doc_twii:
+	name_url: twii
+	controller: docController:twii
+
+doc_formulaire:
+	name_url: formulaire
+	controller: docController:formulaire
+
+doc_page:
+	name_url: page
+	controller: docController:page
+
+doc_carrousel:
+	name_url: carrousel
+	controller: docController:carrousel
